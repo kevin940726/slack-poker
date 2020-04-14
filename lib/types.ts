@@ -1,3 +1,5 @@
+import { firestore } from 'firebase-admin';
+
 export interface User {
   id: string;
   username: string;
@@ -24,4 +26,5 @@ export interface Poker {
     [userID: string]: PokerUser;
   };
   isHidden: boolean;
+  createdTime: firestore.FieldValue;
 }
