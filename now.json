@@ -1,12 +1,5 @@
 {
   "version": 2,
-  "env": {
-    "SLACK_BOT_TOKEN": "@slack-bot-token",
-    "SLACK_SIGNING_SECRET": "@slack-signing-secret",
-    "FIREBASE_PROJECT_ID": "@firebase-project-id",
-    "FIREBASE_CLIENT_EMAIL": "@firebase-client-email",
-    "FIREBASE_PRIVATE_KEY": "@firebase-private-key"
-  },
   "redirects": [
     {
       "source": "/",

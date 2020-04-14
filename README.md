@@ -9,27 +9,18 @@ Planning poker directly on Slack
 Git clone, run yarn install, blablabla you already knew it.
 
 1. Create a new app in Slack.
-   Copy `signing_secret` and `bot_token` (with `chat:write` permission) from the settings. Run the following.
-
-   ```sh
-   yarn now secrets add slack-bot-token [bot_token]
-   yarn now secrets add slack-signing-secret [signing_secret]
-   ```
-
+   Copy `SLACK_SIGNING_SECRET` and `SLACK_BOT_TOKEN` (with `chat:write` permission) from the settings, and paste them in the **Environment Variables** section of now.sh settings.
 2. Create a new project in Firebase
-   Enable Firestore, generate a new service account and download it somewhere. Copy the following keys and add them to the secrets.
+   Enable Firestore, generate a new service account and download it somewhere. Copy the following keys and add them to the environment variables in the settings: `FIREBASE_PROJECT_ID`, `FIREBASE_CLIENT_EMAIL`, `FIREBASE_PRIVATE_KEY`.
 
-   ```sh
-   yarn now secrets add firebase-project-id [project_id]
-   yarn now secrets add firebase-client-email [client_email]
-   yarn now secrets add firebase-private-key [private-key]
-   ```
+## Deployment
 
-   _If you encounter bad arguments error when running the last command, try the below._
-
-   ```sh
-   ./node_modules/.bin/now secrets add -- firebase-private-key "[private-key]"
-   ```
+```sh
+# To deploy preview
+yarn now
+# To deploy to prod
+yarn now --prod
+```
 
 ## Development
 
