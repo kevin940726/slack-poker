@@ -11,3 +11,7 @@ export function findMedian(...numbers: number[]): number {
     2
   );
 }
+
+export function toFixed(number: number): string {
+  return Number.isInteger(number) ? String(number) : number.toFixed(2);
+}

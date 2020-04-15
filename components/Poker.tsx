@@ -1,6 +1,6 @@
 import { createBlock } from 'slack-blockx';
 import { PokerUser } from '../lib/types';
-import { findAverage, findMedian } from '../lib/utils';
+import { findAverage, findMedian, toFixed } from '../lib/utils';
 
 interface Props {
   id: string;
@@ -52,10 +52,10 @@ function PokerSummary({
 
           <context>
             <mrkdwn>
-              <b>Average</b>: <code>{findAverage(...userPoints)}</code>
+              <b>Average</b>: <code>{toFixed(findAverage(...userPoints))}</code>
             </mrkdwn>
             <mrkdwn>
-              <b>Median</b>: <code>{findMedian(...userPoints)}</code>
+              <b>Median</b>: <code>{toFixed(findMedian(...userPoints))}</code>
             </mrkdwn>
             <mrkdwn>
               <b>Votes</b>: <code>{userPoints.length}</code>
