@@ -2,7 +2,9 @@
 
 Planning poker directly on Slack
 
----
+## Preview
+
+<img width="660" alt="Planning poker screenshot" src="https://user-images.githubusercontent.com/7753001/79305150-6730f280-7f25-11ea-941f-81bfc1bac7d1.png">
 
 ## Getting started
 
