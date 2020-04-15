@@ -38,6 +38,7 @@ function PokerSummary({
               </fragment>
             ) : (
               <fragment>
+                {index !== 0 && <br />}
                 <mention>{user.id}</mention>: <b>{point}</b>
               </fragment>
             )
