@@ -1,3 +1,5 @@
+import { firestore } from 'firebase-admin';
+
 export function findAverage(...numbers: number[]): number {
   return numbers.reduce((sum, number) => sum + number, 0) / numbers.length;
 }
@@ -14,4 +16,9 @@ export function findMedian(...numbers: number[]): number {
 
 export function toFixed(number: number): string {
   return Number.isInteger(number) ? String(number) : number.toFixed(2);
+}
+
+// lastEdited could be undefined in older sessions
+export function getTimestamp(date: firestore.Timestamp | undefined): number {
+  return date ? date.toMillis() : 0;
 }

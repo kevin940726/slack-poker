@@ -15,6 +15,7 @@ export interface Team {
 export interface PokerUser {
   user: User;
   point: number | string;
+  lastEdited: firestore.Timestamp;
 }
 
 export interface Poker {

@@ -1,6 +1,6 @@
 import { createBlock } from 'slack-blockx';
 import { PokerUser } from '../lib/types';
-import { findAverage, findMedian, toFixed } from '../lib/utils';
+import { findAverage, findMedian, toFixed, getTimestamp } from '../lib/utils';
 
 interface Props {
   id: string;
@@ -20,6 +20,10 @@ function PokerSummary({
   users: PokerUser[];
   isHidden: boolean;
 }) {
+  const sortedUsers = users.sort(
+    (a, b) => getTimestamp(a.lastEdited) - getTimestamp(b.lastEdited)
+  );
+
   const userPoints = users
     .map(({ point }) => point)
     .filter((point) => typeof point === 'number') as number[];
@@ -30,7 +34,7 @@ function PokerSummary({
 
       <section>
         <mrkdwn>
-          {users.map(({ user, point }, index) =>
+          {sortedUsers.map(({ user, point }, index) =>
             isHidden ? (
               <fragment>
                 {index === 0 ? <b>Participants: </b> : ', '}

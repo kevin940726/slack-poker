@@ -119,6 +119,7 @@ export const estimatePoint = ({
       [user.id]: {
         user,
         point,
+        lastEdited: firestore.Timestamp.now(),
       },
     };
 
