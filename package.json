@@ -13,7 +13,7 @@
     "@slack/web-api": "^5.8.0",
     "firebase-admin": "~8.8.0",
     "got": "^10.7.0",
-    "nanoid": "^3.1.3",
+    "nanoid": "^3.1.31",
     "slack-blockx": "^0.3.1"
   },
   "devDependencies": {
